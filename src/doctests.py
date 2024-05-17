@@ -17,17 +17,16 @@ https://www.artima.com/weblogs/viewpost.jsp?thread=240845
 def testdict(pathname):
     """Return dictionary of tests where key is function name and tests are
      doctest-style tests parsed from pathname. Each doctest starts with
-     '>>> ' and includes either 'name(' or 'repr(name' where name is function
-     to test"""
+     '>>> ' and includes 'function(' for function to test."""
     with open(pathname) as f:
-        regex, lines = re.compile(r'[>]+\s+(repr[(])*([^(]+)'), f.readlines()
+        regex, lines = re.compile(r'[>]+\s+([^(]+)'), f.readlines()
         td, tn, test = dict(), None, None
         for i, line in enumerate(lines):
             match = regex.match(line)
             if match:
                 if tn:
                     td[tn] = test
-                test = td.get(tn := match.groups()[1], list())
+                test = td.get(tn := match.groups()[0], list())
             test.append(line)
     return {k: ''.join(v).strip() for k, v in td.items()}
 
