@@ -3,9 +3,6 @@
 #
 # __main__.py
 #
-"""
-__main__.py  define run_tests and runs it.
-"""
 # From https://stackoverflow.com/a/65780624/17467335 to fix relative imports.
 from sys import path as _p
 from pathlib import Path as _P
@@ -18,6 +15,10 @@ import unittest
 
 # import test modules.
 from tests import *
+
+"""
+__main__.py  define run_tests and runs it.
+"""
 
 __version__ = "0.0.1"
 

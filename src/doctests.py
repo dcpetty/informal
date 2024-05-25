@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# test_doctests.py
+# doctests.py
 #
 import copy, functools, doctest, re
+
 """
 Read and parse doctest strings from .TXT files and use results with @test 
 decorator to add complicated or verbose doctest strings to functions also for

@@ -3,11 +3,12 @@
 #
 # log.py
 #
+import logging, os, tempfile
+
 """
 Logging module that logs to the console and a temporary log file.
 """
 1234567890123456789012345678901234567890123456789012345678901234567890
-import logging, os, tempfile
 
 __all__ = ["log", "log_path", ]
 __author__ = "David C. Petty"

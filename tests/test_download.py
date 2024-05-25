@@ -3,11 +3,12 @@
 #
 # test_doctests.py
 #
+import os, shutil, unittest
+from . import log, download
+
 """
 Tests src/readdoctest.
 """
-import os, shutil, unittest
-from . import log, download
 
 # Set up logging.
 logger = log.log(__name__, 'tests')
